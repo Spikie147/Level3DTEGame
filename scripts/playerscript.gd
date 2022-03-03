@@ -3,6 +3,9 @@ extends KinematicBody2D
 var velocity: Vector2 = Vector2()
 var direction: Vector2 = Vector2()
 
+#variable controling whether the camera follows the player
+var radius_y
+
 func read_input():
 	velocity = Vector2()
 	
@@ -24,5 +27,7 @@ func read_input():
 		
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity * 200)
+
 func _physics_process(delta):
 	read_input()
+	
