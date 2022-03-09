@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/grass.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Enemytest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/playercharactertest.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/Camera2D_script.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Cameratestcode.gd" type="Script" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "grass.png 0"
@@ -35,4 +35,5 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 position = Vector2( 311, 200 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+current = true
 script = ExtResource( 4 )
