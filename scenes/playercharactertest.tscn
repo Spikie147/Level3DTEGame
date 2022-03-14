@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/MiniWorldSprites/Characters/Champions/Okomo.png" type="Texture" id=1]
 [ext_resource path="res://scripts/playerscript.gd" type="Script" id=2]
@@ -20,6 +20,46 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sword_hitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "attack_down"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sword_hitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.5, 0.75, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, false, true ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -150,6 +190,13 @@ tracks/0/keys = {
 "values": [ 6, 7, 8, 9 ]
 }
 
+[sub_resource type="CircleShape2D" id=12]
+radius = 64.0
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 16.0
+height = 32.0
+
 [node name="playercharactertest" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -172,6 +219,7 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
+anims/attack_down = SubResource( 11 )
 anims/idle_down = SubResource( 7 )
 anims/idle_left = SubResource( 8 )
 anims/idle_right = SubResource( 9 )
@@ -180,3 +228,15 @@ anims/walk_down = SubResource( 2 )
 anims/walk_left = SubResource( 4 )
 anims/walk_right = SubResource( 5 )
 anims/walk_up = SubResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="attack_enemy_detector" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 12 )
+
+[node name="sword_hitbox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 32 )
+rotation = -1.57079
+shape = SubResource( 13 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
