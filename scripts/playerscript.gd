@@ -39,3 +39,7 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+
+
+func _on_RigidBody2D_body_entered(body):
+	pass # Replace with function body.
