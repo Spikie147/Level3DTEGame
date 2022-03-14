@@ -45,7 +45,6 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 
-
 func attack():
 	if Input.is_action_pressed("attack"):
 		#if looking == "up":
@@ -58,4 +57,3 @@ func attack():
 			
 
 func _on_Area2D_area_entered(area):
-	pass # Replace with function body.
