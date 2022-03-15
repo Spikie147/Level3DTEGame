@@ -46,10 +46,10 @@ func _physics_process(delta):
 	get_input()
 
 func attack():
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_just_released("down"):
 		#if looking == "up":
 			
-		if Input.is_action_just_released("down"):
+		if Input.is_action_pressed("attack"):
 			$AnimationPlayer.play("attack_down")
 		#if looking == "left":
 			
@@ -57,3 +57,9 @@ func attack():
 			
 
 func _on_Area2D_area_entered(area):
+	pass
+
+
+func _on_sword_hit_area_entered(area):
+	if area.is_in_group("kys"):
+		area.damage()
