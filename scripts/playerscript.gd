@@ -15,6 +15,11 @@ var velocity = Vector2.ZERO
 var roll_vector = Vector2.DOWN
 #var stats = PlayerStats
 
+onready var animationPlayer = $AnimationPlayer
+onready var animationTree = $AnimationTree
+onready var animationState = animationTree.get("parameters/playback")
+onready var swordHitbox = $HitboxPivot/SwordHitbox
+
 func _physics_process(delta):
 	match state:
 		MOVE:
