@@ -34,6 +34,7 @@ position = Vector2( 311, 200 )
 z_index = 1
 
 [node name="EnemyBody" parent="." instance=ExtResource( 2 )]
+position = Vector2( 157, 48 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
