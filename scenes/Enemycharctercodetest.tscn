@@ -39,3 +39,7 @@ position = Vector2( 157, 48 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 script = ExtResource( 4 )
+
+[connection signal="body_entered" from="EnemyBody/DetectPlayer" to="playercharactertest" method="_on_DetectPlayer_body_entered"]
+
+[editable path="EnemyBody"]

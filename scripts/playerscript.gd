@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const ACCELERATION = 850
 const MAX_SPEED = 200
-const FRICTION = 850
+const FRICTION = 950
 
 enum {
 	MOVE,
@@ -96,3 +96,8 @@ func _on_sword_hit_area_entered(area):
 #
 #	velocity = velocity.normalized()
 #	velocity = move_and_slide(velocity * 200)
+
+# This is all our old movement code that we moved from due to using an animation tree instead
+
+func _on_DetectPlayer_body_entered(body):
+	pass # Replace with function body.
