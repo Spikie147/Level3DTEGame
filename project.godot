@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Level3DTEGame"
+boot_splash/image="res://assets/hoodie.png"
 
 [display]
 

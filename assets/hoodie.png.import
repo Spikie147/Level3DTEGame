@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hoodie.jpg-9b00a26f9d4a093e0f70012f0cc6c347.stex"
+path="res://.import/hoodie.png-5d067dedddda26c80660f0096c1ef9ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_omnidir/hoodie.jpg"
-dest_files=[ "res://.import/hoodie.jpg-9b00a26f9d4a093e0f70012f0cc6c347.stex" ]
+source_file="res://assets/hoodie.png"
+dest_files=[ "res://.import/hoodie.png-5d067dedddda26c80660f0096c1ef9ff.stex" ]
 
 [params]
 
