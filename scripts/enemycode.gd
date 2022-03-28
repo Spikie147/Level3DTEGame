@@ -1,32 +1,16 @@
 extends KinematicBody2D
 
-const GRAVITY =10
-export(int) var SPEED =20
-const FLOOR=Vector2(0,1)
-var velocity=Vector2()
-var direction=1
-var _player = null
-const CHASE_SPEED= 1000
-
+var run_speed = 150
+var velocity = Vector2.ZERO
+var player = null
 
 func _physics_process(delta):
-	velocity.x=SPEED*direction
-	if direction == 1:
-		$AnimatedSprite.play("walk_right")
-		velocity=move_and_slide(velocity)
-	elif direction == -1:
-		$AnimatedSprite.play("walk_left")
-		velocity=move_and_slide(velocity)
-	if _player:
-		var _player_direction = (_player.position - self.position).normalized()
-		move_and_slide(SPEED * _player_direction)
+	velocity = Vector2.ZERO
+	if player:
+		velocity = position.direction_to(player.position) * run_speed
+	velocity = move_and_slide(velocity)
 
-func _on_DetectPlayer_body_entered(body):
-	if body.name == "playercharactertest":
-		_player = body
-func _on_DetectPlayer_body_exited(body):
-	if body.name == "playercharactertest":
-		_player = body
+
 
 	#if $RayCast2D.is_colliding()==false:
 		#direction=direction*-1
@@ -39,3 +23,11 @@ func _on_DetectPlayer_body_exited(body):
 
 
 
+
+
+func _on_DetectPlayer_body_entered(body):
+	player = body
+
+
+func _on_DetectPlayer_body_exited(body):
+	player = null

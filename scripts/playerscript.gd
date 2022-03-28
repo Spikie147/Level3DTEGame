@@ -58,5 +58,4 @@ func _on_sword_hit_area_entered(area):
 		area.damage()
 
 
-func _on_DetectPlayer_body_entered(body):
-	pass # Replace with function body.
+
