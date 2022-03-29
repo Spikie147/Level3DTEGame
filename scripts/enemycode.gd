@@ -9,8 +9,19 @@ func _physics_process(delta):
 	if player:
 		velocity = position.direction_to(player.position) * run_speed
 	velocity = move_and_slide(velocity)
-
-
+func _process(delta):
+	if player.position.y >= position.y:
+		get_node("EnemyBody").play("walking_front")
+	if player.position.y <= position.y:
+		get_node("EnemyBody").play("walk_up")
+	if Input.is_action_pressed('left') and enemy_1_FOV == true:
+		if player.position.x <= position.x:
+			get_node("EnemyBody").play("walking_left")
+	if player.position.x >= position.x:
+		get_node("EnemyBody").play("walking_right")
+	if Input.is_action_pressed('right') and enemy_1_FOV == true:
+		if player.position.x >= position.x:
+			get_node("EnemyBody").play("walking_right")
 
 	#if $RayCast2D.is_colliding()==false:
 		#direction=direction*-1
