@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/[SFM] Shrekophone.wav-e8aea90e3db2e50c0338fbc041b68588.sample"
+
+[deps]
+
+source_file="res://assets/audio_files/[SFM] Shrekophone.wav"
+dest_files=[ "res://.import/[SFM] Shrekophone.wav-e8aea90e3db2e50c0338fbc041b68588.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

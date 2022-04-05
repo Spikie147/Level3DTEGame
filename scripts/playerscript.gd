@@ -9,6 +9,8 @@ enum {
 	ATTACK,
 }
 
+var sound
+
 var state = MOVE
 var velocity = Vector2.ZERO
 #var stats = PlayerStats
@@ -52,10 +54,10 @@ func attack():
 func _on_Area2D_area_entered(area):
 	pass
 
-
 func _on_sword_hit_area_entered(area):
 	if area.is_in_group("kys"):
 		area.damage()
 
-
+func area_music():
+	sound = SoundPlayer.play_sound_effect("area_1_music")
 
