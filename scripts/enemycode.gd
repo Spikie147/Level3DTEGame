@@ -5,10 +5,11 @@ var velocity = Vector2.ZERO
 var player = null
 
 func _physics_process(delta):
-	velocity = Vector2.ZERO
-	if player:
-		velocity = position.direction_to(player.position) * run_speed
-	velocity = move_and_slide(velocity)
+	if player == true:
+		var vec_to_player = player.global_position - global_position
+		vec_to_player = vec_to_player.normalized()
+		move_and_collide(vec_to_player * RAND_SPEED * delta)
+		
 func _process(delta):
 	if player.position.y >= position.y:
 		get_node("EnemyBody").play("walking_front")
