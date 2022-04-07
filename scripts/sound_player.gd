@@ -5,12 +5,12 @@ onready var music = AudioStreamPlayer.new()
 
 #This creates dictionary for music track sounds.
 var music_tracks = {
-	"main_theme":""
+	"main_theme":"res://assets/audio_files/[SFM] Shrekophone.wav"
 }
 
 #This creates a dictionary for sound effects.
 var sound_effects = {
-	"close_game":"res://assets/audio_files/begone_thot.wav"
+	"close_game":"res://assets/audio_files/begone_thot.wav",
 }
 
 #Volume
@@ -22,9 +22,10 @@ func change_music_db(val):
 
 func change_sound_db(val):
 	sound_db = linear2db(val)
-#This plays the music.
+
+#Plays the music.
 func _ready():
-	change_music_db(0.08)
+	change_music_db(0.1)
 	music.volume_db = music_db
 	music.stream = load(music_tracks["main_theme"])
 	add_child(music)
