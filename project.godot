@@ -13,7 +13,7 @@ config_version=4
 config/name="Level3DTEGame"
 run/main_scene="res://scenes/Menu_screens/MenuScreen.tscn"
 boot_splash/image="res://assets/hoodie.png"
-config/icon="res://assets/grass.png"
+config/icon="res://assets/Scroll.png"
 
 [autoload]
 
