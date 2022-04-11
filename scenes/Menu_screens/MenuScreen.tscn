@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Menu_screens/MenuScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/press-start-2p/PressStart2P.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/MountainWallpaper_PixelArt.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -13,6 +14,11 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 960.0
+margin_bottom = 540.0
+texture = ExtResource( 3 )
 
 [node name="VboxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
