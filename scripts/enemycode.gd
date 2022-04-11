@@ -3,26 +3,24 @@ extends KinematicBody2D
 var run_speed = 150
 var velocity = Vector2.ZERO
 var player = null
+var playerdetected = false
+
 
 func _physics_process(delta):
-	if player == true:
-		var vec_to_player = player.global_position - global_position
-		vec_to_player = vec_to_player.normalized()
-		move_and_collide(vec_to_player * RAND_SPEED * delta)
-		
-func _process(delta):
+	if _player:
+		var player_direction = (player.position - self.position).normalized()
+		move_and_slide(SPEED * player_direction)
+
+func _process(_delta):
 	if player.position.y >= position.y:
-		get_node("EnemyBody").play("walking_front")
+		get_node("EnemyBody").$AnimationSprite.play("walk_down")
 	if player.position.y <= position.y:
 		get_node("EnemyBody").play("walk_up")
-	if Input.is_action_pressed('left') and enemy_1_FOV == true:
-		if player.position.x <= position.x:
-			get_node("EnemyBody").play("walking_left")
 	if player.position.x >= position.x:
-		get_node("EnemyBody").play("walking_right")
-	if Input.is_action_pressed('right') and enemy_1_FOV == true:
-		if player.position.x >= position.x:
-			get_node("EnemyBody").play("walking_right")
+		get_node("EnemyBody").play("walk_right")
+	if player.position.x <= position.x:
+		get_node("EnemyBody").play("walk_left")
+
 
 	#if $RayCast2D.is_colliding()==false:
 		#direction=direction*-1
