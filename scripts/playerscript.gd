@@ -15,11 +15,14 @@ var state = MOVE
 var velocity = Vector2.ZERO
 #var stats = PlayerStats
 
+var looking = "down"
+
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
 func _physics_process(delta):
+	attack()
 	move_state(delta)
 
 func move_state(delta):
@@ -41,8 +44,7 @@ func move_state(delta):
 	velocity = move_and_slide(velocity)
 
 func attack():
-	if Input.is_action_just_released("down"):
-		#if looking == "up":
+	if looking == "down":
 			
 		if Input.is_action_pressed("attack"):
 			$AnimationPlayer.play("attack_down")
