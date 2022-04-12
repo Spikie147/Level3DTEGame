@@ -6,6 +6,11 @@ var player = null
 var playerdetected = false
 
 
+func ready():
+	get_node("AnimatedSprite").play("idle")
+	#current_hp = max_hp
+
+
 func _physics_process(delta):
 	if _player:
 		var player_direction = (player.position - self.position).normalized()
@@ -13,7 +18,7 @@ func _physics_process(delta):
 
 func _process(_delta):
 	if player.position.y >= position.y:
-		get_node("EnemyBody").$AnimationSprite.play("walk_down")
+		get_node("EnemyBody").play("walk_down")
 	if player.position.y <= position.y:
 		get_node("EnemyBody").play("walk_up")
 	if player.position.x >= position.x:
