@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tongo.png-5e08cb9c13d6637a398d11d2605e5928.stex"
+path="res://.import/dungeon_tiles_moved.png.png-bf07d066c7e9bfa636fb7676c11584e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tongo.png"
-dest_files=[ "res://.import/tongo.png-5e08cb9c13d6637a398d11d2605e5928.stex" ]
+source_file="res://assets/dungeon_tiles_moved.png.png"
+dest_files=[ "res://.import/dungeon_tiles_moved.png.png-bf07d066c7e9bfa636fb7676c11584e4.stex" ]
 
 [params]
 
