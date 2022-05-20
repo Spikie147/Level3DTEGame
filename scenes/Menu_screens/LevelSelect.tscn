@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/Menu_screens/LevelSelect.gd" type="Script" id=1]
 [ext_resource path="res://assets/press-start-2p/PressStart2P.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/shrek_dress_2_THE_FACE.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/MountainWallpaper_PixelArt.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -21,10 +21,8 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 65.0
-margin_top = 21.0
-margin_right = 900.0
-margin_bottom = 400.0
+margin_right = 960.0
+margin_bottom = 540.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
