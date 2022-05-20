@@ -60,6 +60,15 @@ theme = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
 text = "< Return To Menu"
 
+[node name="CodyScene_Timer" type="Timer" parent="."]
+
+[node name="MatthewScene_Timer" type="Timer" parent="."]
+
+[node name="Exit_Timer" type="Timer" parent="."]
+
 [connection signal="pressed" from="VBoxContainer/Matthew_scene" to="." method="_on_Matthew_scene_pressed"]
 [connection signal="pressed" from="VBoxContainer/Cody_scene" to="." method="_on_Cody_scene_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="CodyScene_Timer" to="." method="_on_CodyScene_Timer_timeout"]
+[connection signal="timeout" from="MatthewScene_Timer" to="." method="_on_MatthewScene_Timer_timeout"]
+[connection signal="timeout" from="Exit_Timer" to="." method="_on_Exit_Timer_timeout"]

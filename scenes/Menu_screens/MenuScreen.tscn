@@ -14,6 +14,9 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ -302.0 ]
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 960.0
@@ -43,8 +46,12 @@ margin_bottom = 48.0
 custom_fonts/font = SubResource( 2 )
 text = "Begone THOT"
 
+[node name="Close_Timer" type="Timer" parent="."]
+
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="pressed" from="VboxContainer/Start_button" to="." method="_on_Start_button_pressed"]
 [connection signal="pressed" from="VboxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="Close_Timer" to="." method="_on_Close_Timer_timeout"]
+[connection signal="timeout" from="Close_Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
