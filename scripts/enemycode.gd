@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var run_speed = 150
+var run_speed = 100
 var velocity = Vector2.ZERO
 var player = null
 var playerdetected = false
@@ -11,20 +11,22 @@ func ready():
 	#current_hp = max_hp
 
 
-func _physics_process(delta):
-	if _player:
+func _physics_process(_delta):
+	if player:
 		var player_direction = (player.position - self.position).normalized()
-		move_and_slide(SPEED * player_direction)
+		move_and_slide(run_speed * player_direction)
 
 func _process(_delta):
 	if player.position.y >= position.y:
-		get_node("EnemyBody").play("walk_down")
+		$AnimatedSprite.play("walk_down")
 	if player.position.y <= position.y:
-		get_node("EnemyBody").play("walk_up")
+		$AnimatedSprite.play("walk_up")
 	if player.position.x >= position.x:
-		get_node("EnemyBody").play("walk_right")
+		$AnimatedSprite.play("walk_right")
 	if player.position.x <= position.x:
-		get_node("EnemyBody").play("walk_left")
+		$AnimatedSprite.play("walk_left")
+	else: 
+		$AnimatedSprite.play("idle")
 
 
 	#if $RayCast2D.is_colliding()==false:
