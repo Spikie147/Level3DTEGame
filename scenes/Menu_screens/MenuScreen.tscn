@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Menu_screens/MenuScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/press-start-2p/PressStart2P.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/MountainWallpaper_PixelArt.png" type="Texture" id=3]
+[ext_resource path="res://assets/MountainWallpaper_PixelArt_Title.png.png" type="Texture" id=3]
+[ext_resource path="res://assets/Scroll.png" type="Texture" id=4]
+[ext_resource path="res://assets/close.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -35,16 +37,18 @@ margin_bottom = 20.0
 
 [node name="Start_button" type="Button" parent="VboxContainer"]
 margin_right = 268.0
-margin_bottom = 22.0
+margin_bottom = 38.0
 custom_fonts/font = SubResource( 1 )
 text = "Level Select"
+icon = ExtResource( 4 )
 
 [node name="Button" type="Button" parent="VboxContainer"]
-margin_top = 26.0
+margin_top = 42.0
 margin_right = 268.0
-margin_bottom = 48.0
+margin_bottom = 64.0
 custom_fonts/font = SubResource( 2 )
 text = "Begone THOT"
+icon = ExtResource( 5 )
 
 [node name="Close_Timer" type="Timer" parent="."]
 
