@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/press-start-2p/PressStart2P.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/MountainWallpaper_PixelArt_Title.png.png" type="Texture" id=3]
 [ext_resource path="res://assets/Scroll.png" type="Texture" id=4]
-[ext_resource path="res://assets/close.png" type="Texture" id=5]
+[ext_resource path="res://assets/close-1.png.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -45,7 +45,7 @@ icon = ExtResource( 4 )
 [node name="Button" type="Button" parent="VboxContainer"]
 margin_top = 42.0
 margin_right = 268.0
-margin_bottom = 64.0
+margin_bottom = 80.0
 custom_fonts/font = SubResource( 2 )
 text = "Begone THOT"
 icon = ExtResource( 5 )
@@ -56,6 +56,6 @@ icon = ExtResource( 5 )
 
 [connection signal="pressed" from="VboxContainer/Start_button" to="." method="_on_Start_button_pressed"]
 [connection signal="pressed" from="VboxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="timeout" from="Close_Timer" to="." method="_on_Close_Timer_timeout"]
 [connection signal="timeout" from="Close_Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Close_Timer" to="." method="_on_Close_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
