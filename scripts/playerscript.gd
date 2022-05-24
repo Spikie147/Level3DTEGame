@@ -53,10 +53,12 @@ func attack():
 			
 		if Input.is_action_pressed("attack"):
 			$AnimationPlayer.play("attack_down")
-		#if looking == "left":
-			
-		#if looking == "right":
-			
+		if looking == "left":
+			$AnimationPlayer.play("attack_left")
+		if looking == "right":
+			$AnimationPlayer.play("attack_right")
+		if looking == "up":
+			$AnimationPlayer.play("attack_up")
 
 func _on_Area2D_area_entered(area):
 	pass
