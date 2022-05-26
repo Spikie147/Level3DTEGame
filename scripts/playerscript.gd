@@ -49,16 +49,19 @@ func move_state(delta):
 	velocity = move_and_slide(velocity)
 
 func attack():
-	if looking == "down":
-			
-		if Input.is_action_pressed("attack"):
+	if Input.is_action_pressed("attack"):
+		if looking == "down":
 			$AnimationPlayer.play("attack_down")
+			sound = SoundPlayer.play_sound_effect("player_slash")
 		if looking == "left":
 			$AnimationPlayer.play("attack_left")
+			sound = SoundPlayer.play_sound_effect("player_slash")
 		if looking == "right":
 			$AnimationPlayer.play("attack_right")
+			sound = SoundPlayer.play_sound_effect("player_slash")
 		if looking == "up":
 			$AnimationPlayer.play("attack_up")
+			sound = SoundPlayer.play_sound_effect("player_slash")
 
 func _on_Area2D_area_entered(area):
 	pass
