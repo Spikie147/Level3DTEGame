@@ -1,4 +1,5 @@
 extends KinematicBody2D
+#Cloaked Spy from tf2
 
 const ACCELERATION = 850
 const MAX_SPEED = 200
@@ -35,6 +36,7 @@ func move_state(delta):
 	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	input_vector = input_vector.normalized()
+	##looking = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/Idle/blend_position", input_vector)
