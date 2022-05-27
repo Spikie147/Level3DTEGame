@@ -11,8 +11,9 @@ var music_tracks = {
 #This creates a dictionary for sound effects.
 var sound_effects = {
 	"close_game":"res://assets/audio_files/begone_thot.wav",
-	"click":"res://assets/audio_files/click.wav"
-}
+	"click":"res://assets/audio_files/click.wav",
+	"player_slash":"res://assets/audio_files/sword_swish.wav"
+	}
 
 #Volume
 var music_db = 1

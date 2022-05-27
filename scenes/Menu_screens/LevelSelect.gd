@@ -3,6 +3,10 @@ extends Control
 var sound
 var timer
 
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene("res://scenes/Menu_screens/MenuScreen.tscn")
+
 func _on_Matthew_scene_pressed():
 	timer = get_node("MatthewScene_Timer")
 	timer.set_wait_time(0.15)
