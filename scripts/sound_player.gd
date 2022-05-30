@@ -5,7 +5,8 @@ onready var music = AudioStreamPlayer.new()
 
 #This creates dictionary for music track sounds.
 var music_tracks = {
-	"main_theme":"res://assets/audio_files/[SFM] Shrekophone.wav"
+	"main_theme":"res://assets/audio_files/[SFM] Shrekophone.wav",
+	"cody_gay":"res://assets/audio_files/CODY IS GAY.wav"
 }
 
 #This creates a dictionary for sound effects.
@@ -35,6 +36,14 @@ func _ready():
 	print(music.stream)
 	print("playing music")
 
+func _unhandled_key_input(event):
+	if event.pressed:
+		cheat_code.append(event.scancode)
+		print(cheat_code.slice(-3,-1))
+	if cheat_code.slice(-8,-1) == [67,79,68,89,73,83,71,65,89]:
+		music.stop()
+		music.stream = load("cody_gay") 
+
 #This plays sound effects.
 func play_sound_effect(sfx):
 	var sound = AudioStreamPlayer.new()
@@ -47,3 +56,4 @@ func play_sound_effect(sfx):
 	yield(sound,"finished")
 	sound.queue_free()
 	#return sound
+
