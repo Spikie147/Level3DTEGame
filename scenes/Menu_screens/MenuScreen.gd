@@ -11,7 +11,6 @@ func _on_Start_button_pressed():
 	timer.set_wait_time(0.15)
 	timer.start()
 	sound = SoundPlayer.play_sound_effect("click")
-	
 
 func _on_Button_pressed():
 	timer = get_node("Close_Timer")

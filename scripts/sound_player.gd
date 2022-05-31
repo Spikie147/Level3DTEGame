@@ -20,6 +20,20 @@ var sound_effects = {
 var music_db = 1
 var sound_db = 1
 
+func _unhandled_key_input(event):
+	if event.pressed:
+		cheat_code.append(event.scancode)
+		print(cheat_code.slice(-3,-1))
+	if cheat_code.slice(-8,-1) == [67,79,68,89,73,83,71,65,89]:
+		print("working")
+		music.stop()
+		music.stream = load("cody_gay") 
+
+func _play_cody_is_gay():
+	#music.stop()
+	music.stream = load("res://assets/audio_files/CODY IS GAY.wav") 
+	print("now playing cody is gay")
+
 func change_music_db(val):
 	music_db = linear2db(val)
 
@@ -35,14 +49,6 @@ func _ready():
 	music.play()
 	print(music.stream)
 	print("playing music")
-
-func _unhandled_key_input(event):
-	if event.pressed:
-		cheat_code.append(event.scancode)
-		print(cheat_code.slice(-3,-1))
-	if cheat_code.slice(-8,-1) == [67,79,68,89,73,83,71,65,89]:
-		music.stop()
-		music.stream = load("cody_gay") 
 
 #This plays sound effects.
 func play_sound_effect(sfx):
