@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ERA - Ameno-YoutubeConvert.cc.wav-6e7d7a1309c0d4a35a31ae7b46c8972c.sample"
+
+[deps]
+
+source_file="res://assets/audio_files/ERA - Ameno-YoutubeConvert.cc.wav"
+dest_files=[ "res://.import/ERA - Ameno-YoutubeConvert.cc.wav-6e7d7a1309c0d4a35a31ae7b46c8972c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
