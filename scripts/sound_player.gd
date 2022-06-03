@@ -6,7 +6,8 @@ onready var music = AudioStreamPlayer.new()
 #This creates dictionary for music track sounds.
 var music_tracks = {
 	"main_theme":"res://assets/audio_files/[SFM] Shrekophone.wav",
-	"cody_gay":"res://assets/audio_files/CODY IS GAY.wav"
+	"cody_gay":"res://assets/audio_files/CODY IS GAY.wav",
+	"dorime":"res://assets/audio_files/ERA - Ameno-YoutubeConvert.cc.wav"
 }
 
 #This creates a dictionary for sound effects.
@@ -29,11 +30,6 @@ func _unhandled_key_input(event):
 		music.stop()
 		music.stream = load("cody_gay") 
 
-func _play_cody_is_gay():
-	#music.stop()
-	music.stream = load("res://assets/audio_files/CODY IS GAY.wav") 
-	print("now playing cody is gay")
-
 func change_music_db(val):
 	music_db = linear2db(val)
 
@@ -42,9 +38,9 @@ func change_sound_db(val):
 
 #Plays the music.
 func _ready():
-	change_music_db(0.1)
+	change_music_db(0.4)
 	music.volume_db = music_db
-	music.stream = load(music_tracks["main_theme"])
+	music.stream = load(music_tracks["dorime"])
 	add_child(music)
 	music.play()
 	print(music.stream)
