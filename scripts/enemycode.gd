@@ -19,11 +19,11 @@ func _physics_process(_delta):
 func _process(_delta):
 	if player.position.y >= position.y:
 		$AnimatedSprite.play("walk_down")
-	if player.position.y <= position.y:
+	elif player.position.y <= position.y:
 		$AnimatedSprite.play("walk_up")
-	if player.position.x >= position.x:
+	elif player.position.x >= position.x:
 		$AnimatedSprite.play("walk_right")
-	if player.position.x <= position.x:
+	elif player.position.x <= position.x:
 		$AnimatedSprite.play("walk_left")
 	else: 
 		$AnimatedSprite.play("idle")
