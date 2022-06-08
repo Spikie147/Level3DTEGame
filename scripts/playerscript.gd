@@ -22,10 +22,15 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
+func _ready():
+	AnimationTree.active = true
+
 func _physics_process(delta):
-	attack()
-	move_state(delta)
-	menu()
+	match state:
+		MOVE:
+			move_state(delta)
+		ATTACK:
+			attack_state(delta)
 
 func menu():
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -49,8 +54,11 @@ func move_state(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
 	velocity = move_and_slide(velocity)
+	
+	if Input.is_action_just_pressed("attack"):
+		state = ATTACK
 
-func attack():
+func attack_state(delta):
 	if Input.is_action_pressed("attack"):
 		if looking == "down":
 			$AnimationPlayer.play("attack_down")
