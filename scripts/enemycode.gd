@@ -7,7 +7,7 @@ var playerdetected = false
 
 
 func ready():
-	get_node("AnimatedSprite").play("idle")
+	get_node("EnemyBody").play("idle")
 	#current_hp = max_hp
 
 
@@ -25,8 +25,6 @@ func _process(_delta):
 		$AnimatedSprite.play("walk_right")
 	elif player.position.x <= position.x:
 		$AnimatedSprite.play("walk_left")
-	else: 
-		$AnimatedSprite.play("idle")
 
 
 	#if $RayCast2D.is_colliding()==false:

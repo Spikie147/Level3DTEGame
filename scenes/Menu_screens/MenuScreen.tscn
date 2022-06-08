@@ -57,6 +57,6 @@ icon = ExtResource( 5 )
 
 [connection signal="pressed" from="VboxContainer/Start_button" to="." method="_on_Start_button_pressed"]
 [connection signal="pressed" from="VboxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="timeout" from="Close_Timer" to="." method="_on_Close_Timer_timeout"]
 [connection signal="timeout" from="Close_Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Close_Timer" to="." method="_on_Close_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
