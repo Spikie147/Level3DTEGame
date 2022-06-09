@@ -23,7 +23,7 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
 func _ready():
-	AnimationTree.active = true
+	AnimationTree.Active = 
 
 func _physics_process(delta):
 	match state:
