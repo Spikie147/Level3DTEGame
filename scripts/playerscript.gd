@@ -1,9 +1,9 @@
 extends KinematicBody2D
 #Cloaked Spy from tf2
 
-const ACCELERATION = 850
-const MAX_SPEED = 200
-const FRICTION = 1000
+const ACCELERATION = 900
+const MAX_SPEED = 250
+const FRICTION = 1100
 
 enum {
 	MOVE,
@@ -22,8 +22,8 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
-func _ready():
-	AnimationTree.Active = 
+#func _ready():
+	#AnimationTree.Active = true
 
 func _physics_process(delta):
 	match state:
@@ -41,7 +41,6 @@ func move_state(delta):
 	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	input_vector = input_vector.normalized()
-	##looking = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/Idle/blend_position", input_vector)
@@ -59,19 +58,10 @@ func move_state(delta):
 		state = ATTACK
 
 func attack_state(delta):
-	if Input.is_action_pressed("attack"):
-		if looking == "down":
-			$AnimationPlayer.play("attack_down")
-			sound = SoundPlayer.play_sound_effect("player_slash")
-		if looking == "left":
-			$AnimationPlayer.play("attack_left")
-			sound = SoundPlayer.play_sound_effect("player_slash")
-		if looking == "right":
-			$AnimationPlayer.play("attack_right")
-			sound = SoundPlayer.play_sound_effect("player_slash")
-		if looking == "up":
-			$AnimationPlayer.play("attack_up")
-			sound = SoundPlayer.play_sound_effect("player_slash")
+	animationState.travel("Attack")
+
+func attack_anim_finish():
+	state = MOVE
 
 func _on_Area2D_area_entered(area):
 	pass
