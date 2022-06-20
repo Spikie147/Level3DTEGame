@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-var run_speed = 100
-var velocity = Vector2.ZERO
+var speed = 100
+var move = Vector2.ZERO
 var player = null
 var playerdetected = false
 
@@ -11,10 +11,11 @@ func ready():
 	#current_hp = max_hp
 
 
-func _physics_process(_delta):
-	if player:
-		var player_direction = (player.position - self.position).normalized()
-		move_and_slide(run_speed * player_direction)
+#func _physics_process(delta: float)-> void:
+	#move = Vector2.ZERO
+	#if player:
+		#move = position.direction_to(player.position) * speed 
+	#move_and_slide(move)
 
 func _process(_delta):
 	if player.position.y >= position.y:
@@ -40,9 +41,17 @@ func _process(_delta):
 
 
 
-func _on_DetectPlayer_body_entered(body):
+#func _on_DetectPlayer_body_entered(body):
+	#player = body
+
+
+#func _on_DetectPlayer_body_exited(body):
+	#player = null
+
+
+func _on_Area2D_body_entered(body: Node) -> void:
 	player = body
 
 
-func _on_DetectPlayer_body_exited(body):
+func _on_Area2D_body_exited(body: Node) -> void:
 	player = null

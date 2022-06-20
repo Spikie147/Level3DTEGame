@@ -40,6 +40,4 @@ position = Vector2( 157, 48 )
 current = true
 script = ExtResource( 4 )
 
-[connection signal="body_exited" from="EnemyBody/DetectPlayer" to="EnemyBody" method="_on_DetectPlayer_body_exited"]
-
 [editable path="EnemyBody"]

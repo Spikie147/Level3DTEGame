@@ -26,17 +26,33 @@ region = Rect2( 48, 16, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 64, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 64, 16, 16 )
+region = Rect2( 16, 48, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 64, 16, 16 )
+region = Rect2( 32, 48, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 64, 16, 16 )
+region = Rect2( 48, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -94,33 +110,17 @@ region = Rect2( 48, 32, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 64, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 96, 16, 16 )
+region = Rect2( 0, 64, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 96, 16, 16 )
+region = Rect2( 16, 64, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 1 )
-region = Rect2( 16, 48, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 48, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 1 )
-region = Rect2( 48, 48, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 48, 16, 16 )
+region = Rect2( 32, 64, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
@@ -134,9 +134,14 @@ animations = [ {
 "name": "walk_up",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
-"name": "attack_down",
+"name": "walk_left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "attack_right",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
@@ -159,22 +164,17 @@ animations = [ {
 "name": "walk_right",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
-"name": "attack_right",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
-"loop": true,
-"name": "walk_left",
+"name": "attack_down",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 160, 160 )
-
 [sub_resource type="CircleShape2D" id=32]
 radius = 40.0
+
+[sub_resource type="CircleShape2D" id=34]
+radius = 112.0
 
 [node name="EnemyBody" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -188,17 +188,19 @@ position = Vector2( 32, 32 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "idle"
-
-[node name="DetectPlayer" type="Area2D" parent="."]
-
-[node name="player_detection" type="CollisionShape2D" parent="DetectPlayer"]
-position = Vector2( 32, 32 )
-shape = SubResource( 19 )
+playing = true
 
 [node name="attack_detection" type="Area2D" parent="."]
 
 [node name="attack_shape" type="CollisionShape2D" parent="attack_detection"]
-position = Vector2( 32, 32 )
+position = Vector2( 32, 40 )
 shape = SubResource( 32 )
 
-[connection signal="body_entered" from="DetectPlayer" to="." method="_on_DetectPlayer_body_entered"]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 32, 40 )
+shape = SubResource( 34 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
