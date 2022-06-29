@@ -31,8 +31,6 @@ func _physics_process(delta):
 			move_state(delta)
 		ATTACK:
 			attack_state(delta)
-
-func menu():
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene("res://scenes/Menu_screens/MenuScreen.tscn")
 
@@ -58,13 +56,11 @@ func move_state(delta):
 		state = ATTACK
 
 func attack_state(delta):
+	velocity = Vector2.ZERO
 	animationState.travel("Attack")
 
 func attack_anim_finish():
 	state = MOVE
-
-func _on_Area2D_area_entered(area):
-	pass
 
 func _on_sword_hit_area_entered(area):
 	if area.is_in_group("kys"):
