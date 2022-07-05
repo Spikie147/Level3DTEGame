@@ -18,9 +18,14 @@ var velocity = Vector2.ZERO
 
 var looking = "down"
 
-onready var animationPlayer = $AnimationPlayer
-onready var animationTree = $AnimationTree
-onready var animationState = animationTree.get("parameters/playback")
+var animationPlayer 
+var animationTree 
+var animationState
+
+func _ready():
+	animationTree = $AnimationTree
+	animationPlayer = $AnimationPlayer
+	animationState = $AnimationTree.get("parameters/playback")
 
 #func _ready():
 	#AnimationTree.Active = true

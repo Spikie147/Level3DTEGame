@@ -2,17 +2,17 @@ extends Node
 #Player variables
  
  
-var health = 100
-var max_health = 200
-
-func reset():
-	var health = 100
-	var max_health = 200
-	var armor = 0
-	var max_armor = 100
+var health 
+var max_health 
+var lives
+var lives_max
  
 func _ready():
-	pass
+	var health = 100
+	var max_health = 200
+	var lives = 3
+	var lives_max = 3
+
 	
 func take_damage(amount):
 	change_health(-amount)

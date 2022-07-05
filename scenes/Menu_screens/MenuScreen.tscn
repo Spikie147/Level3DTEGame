@@ -112,6 +112,7 @@ text = "Begone THOT"
 [node name="Close_Timer" type="Timer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 17.152
 
 [connection signal="pressed" from="VboxContainer/Start_button" to="." method="_on_Start_button_pressed"]
 [connection signal="pressed" from="VboxContainer/Close_button" to="." method="_on_Button_pressed"]
