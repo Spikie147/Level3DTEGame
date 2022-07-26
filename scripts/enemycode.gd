@@ -4,7 +4,7 @@ var speed = 100
 var move = Vector2.ZERO
 var player = null
 var playerdetected = false
-
+signal player_hit
 
 func ready():
 	get_node("EnemyBody").play("idle")
