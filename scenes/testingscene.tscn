@@ -1,39 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/MiniWorldSprites/Characters/Monsters/Orcs/ClubGoblin.png" type="Texture" id=1]
-[ext_resource path="res://scripts/testingscene.gd" type="Script" id=2]
-[ext_resource path="res://scenes/playercharactertest.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/EnemyBodyAnimation.tscn" type="PackedScene" id=1]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 6.0
+[node name="Node2D" type="Node2D"]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 11.2765
-
-[node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 137, 141 )
-scale = Vector2( 10.9977, 10.9977 )
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.5, -0.5 )
-scale = Vector2( 0.6875, 0.6875 )
-texture = ExtResource( 1 )
-hframes = 5
-vframes = 8
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2( 2.30776, 2.30776 )
-shape = SubResource( 2 )
-
-[node name="playercharactertest" parent="." instance=ExtResource( 3 )]
-position = Vector2( 23.6412, 18.1856 )
-scale = Vector2( 0.134004, 0.134004 )
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[node name="EnemyBody" parent="." instance=ExtResource( 1 )]
+position = Vector2( 107, 114 )
