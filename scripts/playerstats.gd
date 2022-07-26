@@ -1,7 +1,7 @@
 extends Node
 #Player variables
- 
- 
+
+
 var health 
 var max_health 
 var lives
