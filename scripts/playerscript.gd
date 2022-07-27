@@ -36,8 +36,6 @@ func _physics_process(delta):
 			move_state(delta)
 		ATTACK:
 			attack_state(delta)
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene("res://scenes/Menu_screens/MenuScreen.tscn")
 
 func move_state(delta):
 	var input_vector = Vector2.ZERO
