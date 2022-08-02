@@ -88,6 +88,7 @@ text = "Main Menu"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 17.152
+one_shot = true
 
 [node name="Menu_Timer" type="Timer" parent="."]
 

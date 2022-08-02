@@ -23,9 +23,8 @@ func _on_Menu_button_pressed():
 	timer.start()
 
 func _on_Timer_timeout():
-	if 
-		if visible:
-			visible = false
+	if visible:
+		visible = false
 
 func _on_Menu_Timer_timeout():
 	get_tree().change_scene("res://scenes/Menu_screens/MenuScreen.tscn")
