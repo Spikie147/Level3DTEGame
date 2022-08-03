@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-var speed = 100
-var move = Vector2.ZERO
+var run_speed = 100
+var velocity = Vector2.ZERO
 var player = null
 var playerdetected = false
 signal player_hit
@@ -11,11 +11,12 @@ func ready():
 	#current_hp = max_hp
 
 
-#func _physics_process(delta: float)-> void:
-	#move = Vector2.ZERO
-	#if player:
-		#move = position.direction_to(player.position) * speed 
-	#move_and_slide(move)
+func _physics_process(delta):
+	velocity = Vector2.ZERO
+	if player:
+		velocity = position.direction_to(player.position) * run_speed
+	velocity = move_and_slide(velocity)
+
 
 func _process(_delta):
 	if player.position.y >= position.y:
@@ -29,7 +30,7 @@ func _process(_delta):
 
 
 	#if $RayCast2D.is_colliding()==false:
-		#direction=direction*-1
+		#direction = direction*-1
 		#$RayCast2D.position.x*=-1
 	#if get_slide_count()>0:
 		#for i in range(get_slide_count()):
