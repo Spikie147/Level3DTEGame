@@ -18,7 +18,7 @@ config/icon="res://assets/Scroll.png"
 [autoload]
 
 SoundPlayer="*res://scripts/sound_player.gd"
-Playerstats="*res://scripts/playerstats.gd"
+PlayerStats="*res://scripts/playerstats.gd"
 
 [display]
 

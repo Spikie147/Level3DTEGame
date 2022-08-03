@@ -36,8 +36,6 @@ func _physics_process(delta):
 			move_state(delta)
 		ATTACK:
 			attack_state(delta)
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene("res://scenes/Menu_screens/MenuScreen.tscn")
 
 func move_state(delta):
 	var input_vector = Vector2.ZERO
@@ -74,3 +72,8 @@ func _on_sword_hit_area_entered(area):
 func area_music():
 	sound = SoundPlayer.play_sound_effect("area_1_music")
 
+func _on_pause_menu_pause():
+	get_tree().paused = true
+
+func _on_pause_menu_unpause():
+	get_tree().paused = false

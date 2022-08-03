@@ -2,10 +2,10 @@ extends Node
 #Player variables
 
 
-var health 
-var max_health 
-var lives
-var lives_max
+var health = 100
+var max_health = 200
+var lives = 3
+var lives_max = 3
  
 func _ready():
 	var health = 100

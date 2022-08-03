@@ -107,7 +107,7 @@ custom_fonts/font = SubResource( 2 )
 custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 4 )
-text = "Begone THOT"
+text = "Exit Game"
 
 [node name="Close_Timer" type="Timer" parent="."]
 
@@ -116,6 +116,6 @@ wait_time = 17.152
 
 [connection signal="pressed" from="VboxContainer/Start_button" to="." method="_on_Start_button_pressed"]
 [connection signal="pressed" from="VboxContainer/Close_button" to="." method="_on_Button_pressed"]
-[connection signal="timeout" from="Close_Timer" to="." method="_on_Close_Timer_timeout"]
 [connection signal="timeout" from="Close_Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Close_Timer" to="." method="_on_Close_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
