@@ -72,3 +72,8 @@ func _on_sword_hit_area_entered(area):
 func area_music():
 	sound = SoundPlayer.play_sound_effect("area_1_music")
 
+func _on_pause_menu_pause():
+	get_tree().paused = true
+
+func _on_pause_menu_unpause():
+	get_tree().paused = false
