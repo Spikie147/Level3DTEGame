@@ -1,4 +1,5 @@
 extends Control
 
 func _ready():
-	$Lives.text = "["+str(PlayerStats.lives)+"]"
+	$Control/Lives.text = "["+str(PlayerStats.lives)+"]"
+	$healthbar.value = PlayerStats.health

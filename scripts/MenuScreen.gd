@@ -17,7 +17,7 @@ func _on_Button_pressed():
 	timer.set_wait_time(2.1)
 	timer.start()
 	sound = SoundPlayer.play_sound_effect("close_game")
-	#####OS.shell_open("https://www.youtube.com/watch?v=5i7n5lcmnZw")
+	#OS.shell_open("https://www.youtube.com/watch?v=5i7n5lcmnZw")
 
 func _on_Close_Timer_timeout():
 	get_tree().quit()
