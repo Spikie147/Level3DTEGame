@@ -14,7 +14,6 @@ var sound
 
 var state = MOVE
 var velocity = Vector2.ZERO
-#var stats = PlayerStats
 
 var looking = "down"
 
@@ -26,9 +25,6 @@ func _ready():
 	animationTree = $AnimationTree
 	animationPlayer = $AnimationPlayer
 	animationState = $AnimationTree.get("parameters/playback")
-
-#func _ready():
-	#AnimationTree.Active = true
 
 func _physics_process(delta):
 	match state:
