@@ -3,9 +3,6 @@ extends Control
 var sound
 var timer
 
-func _onready():
-	print(KEY_PRINT)
-
 func _on_Start_button_pressed():
 	timer = get_node("Timer")
 	timer.set_wait_time(0.15)

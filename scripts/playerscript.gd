@@ -70,6 +70,14 @@ func area_music():
 
 func _on_pause_menu_pause():
 	get_tree().paused = true
-
+	
+func take_damage(amount):
+	print(PlayerStats.health)
+	PlayerStats.change_health(-amount)
+	if PlayerStats.health <= 0:
+		PlayerStats.lives -= 1
+		PlayerStats.health = PlayerStats.max_health
+	if PlayerStats.lives <= 0:
+		get_tree().change_scene("res://scenes/Menu_screens/YouDied.tscn")
 func _on_pause_menu_unpause():
 	get_tree().paused = false

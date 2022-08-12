@@ -7,8 +7,7 @@ var lives = 3
 var lives_max = 3
 
 func _on_enemycode_hit_player():
-	if signal
-		take_damage(5)
+	take_damage(5)
 
 func _ready():
 	var health = 75
@@ -26,3 +25,4 @@ func change_health(amount):
 func get_health():
 	return str(health)
  
+

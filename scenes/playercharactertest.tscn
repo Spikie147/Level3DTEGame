@@ -388,7 +388,7 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
-[node name="playercharactertest" type="KinematicBody2D"]
+[node name="playercharactertest" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
