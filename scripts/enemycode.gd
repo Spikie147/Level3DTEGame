@@ -2,9 +2,11 @@ extends KinematicBody2D
 
 var run_speed = 100
 var velocity = Vector2.ZERO
-var player = null
 var playerdetected = false
 signal player_hit
+var player_in_zone = false
+var player 
+
 
 func ready():
 	get_node("EnemyBody").play("idle")
@@ -19,15 +21,7 @@ func _physics_process(delta):
 
 
 func _process(_delta):
-	if player.position.y >= position.y:
-		$AnimatedSprite.play("walk_down")
-	elif player.position.y <= position.y:
-		$AnimatedSprite.play("walk_up")
-	elif player.position.x >= position.x:
-		$AnimatedSprite.play("walk_right")
-	elif player.position.x <= position.x:
-		$AnimatedSprite.play("walk_left")
-
+	pass
 
 	#if $RayCast2D.is_colliding()==false:
 		#direction = direction*-1
@@ -38,21 +32,15 @@ func _process(_delta):
 				#get_slide_collision(i).collider.dead()
 
 
+func _on_Player_detection_area_entered(area):
+	if area.is_in_group("player"):
+		player = area
+		player_in_zone = true
 
 
 
+func _on_Player_detection_area_exited(area):
+	if area.is_in_group("player"):
+		player = null
+		player_in_zone = false
 
-#func _on_DetectPlayer_body_entered(body):
-	#player = body
-
-
-#func _on_DetectPlayer_body_exited(body):
-	#player = null
-
-
-func _on_Area2D_body_entered(body: Node) -> void:
-	player = body
-
-
-func _on_Area2D_body_exited(body: Node) -> void:
-	player = null
