@@ -17,7 +17,7 @@ var velocity = Vector2.ZERO
 
 var looking = "down"
 
-var animationPlayer 
+var animationPlayer  
 var animationTree 
 var animationState
 

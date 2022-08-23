@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/Camera2D_script.gd" type="Script" id=1]
 [ext_resource path="res://scenes/playercharactertest.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Pause_menu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/DamageBox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/coin.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
@@ -543,6 +544,10 @@ visible = false
 
 [node name="DamageZone" parent="." instance=ExtResource( 9 )]
 position = Vector2( 360, 204 )
+
+[node name="coin" parent="." instance=ExtResource( 10 )]
+position = Vector2( 82, -63 )
+scale = Vector2( 3, 3 )
 
 [connection signal="pause" from="CanvasLayer/pause_menu" to="playercharactertest" method="_on_pause_menu_pause"]
 [connection signal="unpause" from="CanvasLayer/pause_menu" to="playercharactertest" method="_on_pause_menu_unpause"]
