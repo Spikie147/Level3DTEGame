@@ -79,5 +79,9 @@ func take_damage(amount):
 		PlayerStats.health = PlayerStats.max_health
 	if PlayerStats.lives <= 0:
 		get_tree().change_scene("res://scenes/Menu_screens/YouDied.tscn")
+
+func coin_get(amount):
+	PlayerStats.change_coins(+amount)
+
 func _on_pause_menu_unpause():
 	get_tree().paused = false
