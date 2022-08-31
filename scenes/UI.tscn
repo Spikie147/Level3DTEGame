@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/press-start-2p/PressStart2P.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/UI.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/HUD_icons/healthbar_progress.png" type="Texture" id=4]
 [ext_resource path="res://assets/HUD_icons/healthbar_under.png" type="Texture" id=5]
 [ext_resource path="res://assets/HUD_icons/healthbar_over.png" type="Texture" id=6]
+[ext_resource path="res://assets/diglet.jpg" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -21,8 +22,8 @@ script = ExtResource( 2 )
 [node name="healthbar" type="TextureProgress" parent="."]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 384.0
-margin_bottom = 58.0
+margin_right = 390.0
+margin_bottom = 60.0
 value = 50.0
 texture_under = ExtResource( 5 )
 texture_over = ExtResource( 6 )
@@ -31,8 +32,8 @@ nine_patch_stretch = true
 
 [node name="Control" type="Control" parent="."]
 margin_top = 60.0
-margin_right = 40.0
-margin_bottom = 80.0
+margin_right = 50.0
+margin_bottom = 110.0
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 margin_left = 10.0
@@ -57,3 +58,32 @@ margin_right = 256.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 2 )
 text = "placeholder"
+
+[node name="Coins" type="Control" parent="."]
+margin_top = 110.0
+margin_right = 50.0
+margin_bottom = 160.0
+
+[node name="TextureRect" type="TextureRect" parent="Coins"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="x" type="Label" parent="Coins"]
+margin_left = 60.0
+margin_top = 20.0
+margin_right = 76.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 1 )
+text = "x"
+
+[node name="coins" type="Label" parent="Coins"]
+margin_left = 80.0
+margin_top = 20.0
+margin_right = 256.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 2 )
+text = "0"

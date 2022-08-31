@@ -1,19 +1,21 @@
 extends Node
 
 #Player variables
-var health = 75
+var health
 var max_health = 100
-var lives = 3
+var lives
 var lives_max = 3
+var coins
 
 func _on_enemycode_hit_player():
 	take_damage(5)
 
 func _ready():
-	var health = 75
-	var max_health = 100
-	var lives = 3
-	var lives_max = 3
+	health = 75
+	max_health = 100
+	lives = 3
+	lives_max = 3
+	coins = 0
 
 func take_damage(amount):
 	change_health(-amount)
@@ -25,4 +27,5 @@ func change_health(amount):
 func get_health():
 	return str(health)
  
-
+func change_coins(amount):
+	coins += amount
