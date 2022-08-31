@@ -5,7 +5,7 @@ var velocity = Vector2.ZERO
 var playerdetected = false
 signal player_hit
 var player_in_zone = false
-var player 
+var player = null
 
 
 func ready():
@@ -16,31 +16,35 @@ func ready():
 func _physics_process(delta):
 	velocity = Vector2.ZERO
 	if player:
+		print("fish dinner")
 		velocity = position.direction_to(player.position) * run_speed
 	velocity = move_and_slide(velocity)
-
+	#velocity = position.direction_to(player.position) * run_speed
+	#move_and_slide(velocity)
 
 func _process(_delta):
-	pass
-
-	#if $RayCast2D.is_colliding()==false:
-		#direction = direction*-1
-		#$RayCast2D.position.x*=-1
-	#if get_slide_count()>0:
-		#for i in range(get_slide_count()):
-			#if "playercharactertest" in get_slide_collision(i).collider.name:
-				#get_slide_collision(i).collider.dead()
-
-
-func _on_Player_detection_area_entered(area):
-	if area.is_in_group("player"):
-		player = area
-		player_in_zone = true
+	if velocity == Vector2():
+		$AnimatedSprite.play("idle")
+	elif velocity.x > 0:
+		$AnimatedSprite.play("walk_right")
+	elif velocity.x < 0:
+		$AnimatedSprite.play("walk_left")
+	elif velocity.y > 0:
+		$AnimatedSprite.play("walk_up")
+	elif velocity.y < 0:
+		$AnimatedSprite.play("walk_down")
 
 
 
-func _on_Player_detection_area_exited(area):
-	if area.is_in_group("player"):
-		player = null
-		player_in_zone = false
+
+
+func _on_Player_detection_body_entered(body):
+	print("entered")
+	player = body
+
+
+
+func _on_Player_detection_body_exited(body):
+	print("exited")
+	player = null
 
