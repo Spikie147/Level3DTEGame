@@ -80,7 +80,7 @@ custom_fonts/font = SubResource( 1 )
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-text = "Matthew Scene"
+text = "Level One"
 
 [node name="Cody_scene" type="Button" parent="VBoxContainer"]
 margin_top = 52.0

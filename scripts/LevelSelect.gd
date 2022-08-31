@@ -32,4 +32,4 @@ func _on_CodyScene_Timer_timeout():
 	get_tree().change_scene("res://scenes/Enemycharctercodetest.tscn")
 
 func _on_MatthewScene_Timer_timeout():
-	get_tree().change_scene("res://scenes/testroom_1.tscn")
+	get_tree().change_scene("res://scenes/levels/level_1.tscn")
