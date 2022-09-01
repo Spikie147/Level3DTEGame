@@ -20,5 +20,5 @@ func _on_DamageArea_body_exited(body):
 
 func _on_DamageTimer_timeout():
 	if player_in_zone:
-		player.take_damage(1)
+		player.take_damage(5)
 		DamageTimer.start()
