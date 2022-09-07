@@ -17,6 +17,10 @@ func _ready():
 	lives_max = 3
 	coins = 0
 
+func level_end():
+	health = 100
+	lives = 3
+
 func take_damage(amount):
 	change_health(-amount)
 
