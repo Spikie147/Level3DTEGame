@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/grass.png" type="Texture" id=1]
-[ext_resource path="res://assets/dungeon_tiles_barrels.png.png" type="Texture" id=3]
+[ext_resource path="res://assets/dungeon_tiles_thatonewallthatsannoying.png" type="Texture" id=2]
+[ext_resource path="res://assets/dungeon_tiles_barrels.png" type="Texture" id=3]
 [ext_resource path="res://assets/dungeon_tiles_final.png" type="Texture" id=4]
 [ext_resource path="res://assets/black.png" type="Texture" id=5]
 
@@ -11,10 +12,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=24]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=25]
+[sub_resource type="ConvexPolygonShape2D" id=23]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=23]
+[sub_resource type="ConvexPolygonShape2D" id=27]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=28]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=29]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
@@ -880,7 +887,7 @@ script/source = "
 115/texture = ExtResource( 4 )
 115/tex_offset = Vector2( 0, 0 )
 115/modulate = Color( 1, 1, 1, 1 )
-115/region = Rect2( 176, 128, 16, 32 )
+115/region = Rect2( 112, 80, 16, 16 )
 115/tile_mode = 0
 115/occluder_offset = Vector2( 0, 0 )
 115/navigation_offset = Vector2( 0, 0 )
@@ -897,27 +904,6 @@ script/source = "
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 115/z_index = 0
-116/name = "dungeon_tiles_final.png 116"
-116/texture = ExtResource( 4 )
-116/tex_offset = Vector2( 0, 0 )
-116/modulate = Color( 1, 1, 1, 1 )
-116/region = Rect2( 112, 80, 16, 16 )
-116/tile_mode = 0
-116/occluder_offset = Vector2( 0, 0 )
-116/navigation_offset = Vector2( 0, 0 )
-116/shape_offset = Vector2( 0, 0 )
-116/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-116/shape = SubResource( 25 )
-116/shape_one_way = false
-116/shape_one_way_margin = 1.0
-116/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 25 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-116/z_index = 0
 117/name = "dungeon_tiles_final.png 117"
 117/texture = ExtResource( 4 )
 117/tex_offset = Vector2( 0, 0 )
@@ -1261,6 +1247,69 @@ script/source = "
 140/shape_one_way_margin = 0.0
 140/shapes = [  ]
 140/z_index = 0
+141/name = "dungeon_tiles_barrels.png.png 141"
+141/texture = ExtResource( 3 )
+141/tex_offset = Vector2( 0, 0 )
+141/modulate = Color( 1, 1, 1, 1 )
+141/region = Rect2( 32, 192, 16, 16 )
+141/tile_mode = 0
+141/occluder_offset = Vector2( 0, 0 )
+141/navigation_offset = Vector2( 0, 0 )
+141/shape_offset = Vector2( 0, 0 )
+141/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+141/shape = SubResource( 27 )
+141/shape_one_way = false
+141/shape_one_way_margin = 1.0
+141/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 27 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+141/z_index = 0
+142/name = "dungeon_tiles_barrels.png.png 142"
+142/texture = ExtResource( 3 )
+142/tex_offset = Vector2( 0, 0 )
+142/modulate = Color( 1, 1, 1, 1 )
+142/region = Rect2( 32, 224, 16, 16 )
+142/tile_mode = 0
+142/occluder_offset = Vector2( 0, 0 )
+142/navigation_offset = Vector2( 0, 0 )
+142/shape_offset = Vector2( 0, 0 )
+142/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+142/shape = SubResource( 28 )
+142/shape_one_way = false
+142/shape_one_way_margin = 1.0
+142/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 28 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+142/z_index = 0
+143/name = "dungeon_tiles_thatonewallthatsannoying.png 143"
+143/texture = ExtResource( 2 )
+143/tex_offset = Vector2( 0, 0 )
+143/modulate = Color( 1, 1, 1, 1 )
+143/region = Rect2( 96, 16, 16, 16 )
+143/tile_mode = 0
+143/occluder_offset = Vector2( 0, 0 )
+143/navigation_offset = Vector2( 0, 0 )
+143/shape_offset = Vector2( 0, 0 )
+143/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+143/shape = SubResource( 29 )
+143/shape_one_way = false
+143/shape_one_way_margin = 1.0
+143/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 29 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+143/z_index = 0
 script = SubResource( 22 )
 
 [node name="TileMap" type="TileMap"]
