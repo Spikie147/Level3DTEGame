@@ -14,7 +14,6 @@ tile_data = PoolIntArray( -458739, 143, 0, -458738, 143, 0, -458737, 143, 0, -45
 [node name="playercharactertest" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
-current = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
 

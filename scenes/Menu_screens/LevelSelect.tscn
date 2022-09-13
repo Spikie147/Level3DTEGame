@@ -92,7 +92,7 @@ custom_fonts/font = SubResource( 2 )
 custom_styles/hover = SubResource( 8 )
 custom_styles/pressed = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
-text = "Cody's Scene"
+text = "Level Two"
 
 [node name="Return" type="Button" parent="."]
 margin_right = 275.0
