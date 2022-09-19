@@ -11,11 +11,15 @@ func _on_enemycode_hit_player():
 	take_damage(5)
 
 func _ready():
-	health = 75
+	health = 100
 	max_health = 100
 	lives = 3
 	lives_max = 3
 	coins = 0
+
+func level_end():
+	health = 100
+	lives = 3
 
 func take_damage(amount):
 	change_health(-amount)

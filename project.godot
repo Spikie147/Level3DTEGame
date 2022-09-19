@@ -13,6 +13,7 @@ config_version=4
 config/name="Level3DTEGame"
 run/main_scene="res://scenes/Menu_screens/MenuScreen.tscn"
 boot_splash/image="res://assets/MountainWallpaper_PixelArt.png"
+boot_splash/bg_color=Color( 0.223529, 0.0588235, 0.0588235, 1 )
 config/icon="res://assets/Scroll.png"
 
 [autoload]

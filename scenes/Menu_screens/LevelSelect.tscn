@@ -80,7 +80,7 @@ custom_fonts/font = SubResource( 1 )
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-text = "Matthew Scene"
+text = "Level One"
 
 [node name="Cody_scene" type="Button" parent="VBoxContainer"]
 margin_top = 52.0
@@ -92,7 +92,7 @@ custom_fonts/font = SubResource( 2 )
 custom_styles/hover = SubResource( 8 )
 custom_styles/pressed = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
-text = "Cody's Scene"
+text = "Level Two"
 
 [node name="Return" type="Button" parent="."]
 margin_right = 275.0
