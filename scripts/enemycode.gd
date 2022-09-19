@@ -25,14 +25,20 @@ func _physics_process(delta):
 func _process(_delta):
 	if velocity == Vector2():
 		$AnimatedSprite.play("idle")
-	elif velocity.x > 0:
-		$AnimatedSprite.play("walk_right")
-	elif velocity.x < 0:
-		$AnimatedSprite.play("walk_left")
-	elif velocity.y > 0:
-		$AnimatedSprite.play("walk_up")
 	elif velocity.y < 0:
-		$AnimatedSprite.play("walk_down")
+		if velocity.y < velocity.x:
+			$AnimatedSprite.play("walk_up")
+		elif velocity.x > 0:
+			$AnimatedSprite.play("walk_right")
+		elif velocity.x < 0:
+			$AnimatedSprite.play("walk_left")
+	elif velocity.y > 0:
+		if velocity.y > velocity.x:
+			$AnimatedSprite.play("walk_down")
+		elif velocity.x > 0:
+			$AnimatedSprite.play("walk_right")
+		elif velocity.x < 0:
+			$AnimatedSprite.play("walk_left")
 
 
 
