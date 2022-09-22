@@ -7,6 +7,7 @@ signal player_hit
 var player_in_zone = false
 var player = null
 
+var enemy_health = 3
 
 func ready():
 	get_node("EnemyBody").play("idle")
@@ -40,17 +41,14 @@ func _process(_delta):
 		elif velocity.x < 0:
 			$AnimatedSprite.play("walk_left")
 
-
-
-
-
 func _on_Player_detection_body_entered(body):
 	print("entered")
 	player = body
-
-
 
 func _on_Player_detection_body_exited(body):
 	print("exited")
 	player = null
 
+func _on_Button_pressed():
+	enemy_health -= 1
+	print(enemy_health)
