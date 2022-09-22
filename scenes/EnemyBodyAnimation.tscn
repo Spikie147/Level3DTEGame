@@ -211,5 +211,12 @@ position = Vector2( 32, 40 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 35 )
 
+[node name="Button" type="Button" parent="."]
+margin_left = 7.0
+margin_top = 18.0
+margin_right = 58.0
+margin_bottom = 59.0
+
 [connection signal="area_entered" from="Player_detection" to="." method="_on_Player_detection_area_entered"]
 [connection signal="area_exited" from="Player_detection" to="." method="_on_Player_detection_area_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

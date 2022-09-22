@@ -7,7 +7,6 @@ const FRICTION = 1100
 
 enum {
 	MOVE,
-	ATTACK,
 }
 
 var sound
@@ -28,8 +27,6 @@ func _physics_process(delta):
 	match state:
 		MOVE:
 			move_state(delta)
-		ATTACK:
-			attack_state(delta)
 
 func move_state(delta):
 	var input_vector = Vector2.ZERO
@@ -40,7 +37,6 @@ func move_state(delta):
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Run/blend_position", input_vector)
-		animationTree.set("parameters/Attack/blend_position", input_vector)
 		animationState.travel("Run")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
@@ -48,20 +44,6 @@ func move_state(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
 	velocity = move_and_slide(velocity)
-	
-	if Input.is_action_just_pressed("attack"):
-		state = ATTACK
-
-func attack_state(delta):
-	velocity = Vector2.ZERO
-	animationState.travel("Attack")
-
-func attack_anim_finish():
-	state = MOVE
-
-func _on_sword_hit_area_entered(area):
-	if area.is_in_group("kys"):
-		area.damage()
 
 func area_music():
 	sound = SoundPlayer.play_sound_effect("area_1_music")
