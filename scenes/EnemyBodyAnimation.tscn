@@ -183,6 +183,7 @@ radius = 28.0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 32, 40 )
 shape = SubResource( 1 )
 
@@ -196,12 +197,14 @@ playing = true
 [node name="attack_detection" type="Area2D" parent="."]
 
 [node name="attack_shape" type="CollisionShape2D" parent="attack_detection"]
+visible = false
 position = Vector2( 32, 40 )
 shape = SubResource( 32 )
 
 [node name="Player_detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_detection"]
+visible = false
 position = Vector2( 32, 40 )
 shape = SubResource( 34 )
 
@@ -209,9 +212,11 @@ shape = SubResource( 34 )
 position = Vector2( 32, 40 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource( 35 )
 
 [node name="Button" type="Button" parent="."]
+visible = false
 margin_left = 7.0
 margin_top = 18.0
 margin_right = 58.0

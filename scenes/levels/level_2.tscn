@@ -22,4 +22,37 @@ position = Vector2( 360, -552 )
 [node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
 
 [node name="EnemyBody" parent="." instance=ExtResource( 5 )]
-position = Vector2( 64, -128 )
+position = Vector2( 904, -32 )
+
+[node name="coin" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -720, 32 )
+
+[node name="coin2" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -656, 32 )
+
+[node name="coin3" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -592, 32 )
+
+[node name="coin4" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -528, 32 )
+
+[node name="coin5" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -464, 32 )
+
+[node name="coin6" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -400, 32 )
+
+[node name="coin7" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -336, 32 )
+
+[node name="coin8" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -120, 32 )
+
+[node name="coin9" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -40, 32 )
+
+[node name="coin10" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -64, -20 )
+
+[node name="coin11" parent="EnemyBody" instance=ExtResource( 6 )]
+position = Vector2( -120, 92 )
